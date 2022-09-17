@@ -12,8 +12,9 @@ let transcriptID = '';
 let summary = false;
 const refreshPage =  setInterval(function() {getTranscript()}, 2000);
 
+// HTML
 {
-    
+
 }
 
 // upload video to AssemblyAI
@@ -86,6 +87,7 @@ function updateTranscript(data) {
             console.log(data.chapters.length);//.text);
             console.log(data.chapters);
             document.getElementById("transcript").innerText = data.text;
+            updateChapters(data.chapters);
             refreshTranscript = false;
           break;
         default:
@@ -95,6 +97,21 @@ function updateTranscript(data) {
           break;
       }
 }
+
+function updateChapters(chapters){
+    let chapLen = chapters.length;   
+    for (int i = 0; i < chapLen; i++) {
+        var HTMLContent = `
+        <div class="" id='chapter${i}'>
+            <div>HTML Content!</div>
+        </div>
+        `;
+        
+        document.getElementById('demo').innerHTML = (HTMLContent);
+        
+    }
+}
+
 
 // Triggers the loading page and starts the incremental refresh
 function transciptUploadSuccess(id) {
