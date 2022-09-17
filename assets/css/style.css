@@ -10838,6 +10838,10 @@ textarea.form-control-lg {
   color: #fff !important;
 }
 
+.results .button-space {
+  padding: 1.5rem 0 0.5rem 0;
+}
+
 .topbar img {
   max-width: 10%;
 }
