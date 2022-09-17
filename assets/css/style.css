@@ -10778,34 +10778,47 @@ textarea.form-control-lg {
 .description--text .description--paragraph {
   color: #37352F;
   font-family: "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
 }
 .description--text .description--disclaimer {
   color: #c2c2c9;
   font-family: "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  font-style: italic;
 }
 
 .form-label {
   font-family: Helvetica, sans-serif;
   color: #37352F;
+  font-weight: 600;
 }
 
-.submit-btn {
-  display: inline-block;
-  outline: 0;
-  border: 0;
-  cursor: pointer;
-  border-radius: 8px;
-  padding: 14px 24px 16px;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1;
-  transition: transform 200ms, background 200ms;
-  background: transparent;
-  color: #000000;
-  box-shadow: 0 0 0 3px #000000 inset;
+.footer--head {
+  font-family: Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #37352F;
+  font-weight: 400;
 }
-.submit-btn :hover {
-  transform: translateY(-2px);
+.footer--body {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1rem;
+  color: #c2c2c9;
+  font-weight: 400;
+}
+.footer--body a {
+  text-decoration: none;
+  font-family: "Segoe UI", sans-serif;
+  color: #c2c2c9;
+}
+.footer--body a:hover {
+  color: #37352F;
+}
+
+.btn-light:hover {
+  background-color: #9B5DE5 !important;
+  color: #fff !important;
 }
 
 /*# sourceMappingURL=style.css.map */
