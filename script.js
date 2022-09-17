@@ -99,15 +99,22 @@ function updateTranscript(data) {
 }
 
 function updateChapters(chapters){
+    let HTMLContent = "";
     let chapLen = chapters.length;   
-    for (int i = 0; i < chapLen; i++) {
-        var HTMLContent = `
+    
+    // TODO if only one chap
+
+    for (let i = 1; i <= chapLen; i++) {
+        HTMLContent = HTMLContent + `
         <div class="" id='chapter${i}'>
-            <div>HTML Content!</div>
+            <h4>Chapter ${i}: ${chapters[i - 1].gist}</h4>
+            <p>${chapters[i - 1].summary}</p>
+            <p>${chapters[i - 1].headline}</p>
         </div>
-        `;
+        `; // TODO add timestamps
+        // TODO add copy to clipboard
         
-        document.getElementById('demo').innerHTML = (HTMLContent);
+        document.getElementById('summary').innerHTML = (HTMLContent);
         
     }
 }
@@ -120,6 +127,7 @@ function transciptUploadSuccess(id) {
     // "triggers" the periodic refresh for transcript
     refreshTranscript = true;
     document.getElementById("transcript").innerText = "loading... (some animation), do not refresh page"; // TODO make it the loading thing
+    document.getElementById("summary").innerText = "loading... (some animation), do not refresh page"; 
     // TODO check if empty
 }
 
