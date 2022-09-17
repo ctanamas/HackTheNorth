@@ -113,6 +113,21 @@ function updateChapters(chapters){
         </div>
         `; // TODO add timestamps
         // TODO add copy to clipboard
+/*
+
+        <div class="accordion-body-title">"
+        <h4>Summary title</h4>
+    </div>
+    <div class="accordion-body-summary">
+        <p>Summary</p>
+    </div>
+    <div class="accordion-body-takeaway">
+        <p>Takeaway</p>
+    </div>
+    <div class="accordion-body-time-stamp">
+        <p>Time-stamps</p>
+    </div>
+*/
         
         document.getElementById('summary').innerHTML = (HTMLContent);
         
