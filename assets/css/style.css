@@ -10830,4 +10830,8 @@ textarea.form-control-lg {
   color: #fff !important;
 }
 
+.topbar img {
+  max-width: 10%;
+}
+
 /*# sourceMappingURL=style.css.map */

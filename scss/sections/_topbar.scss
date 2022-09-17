@@ -1,5 +1,8 @@
 @use '../custom' as *;
 
 .topbar {
-    
+
+    img {
+        max-width: 10%;
+    }
 }
