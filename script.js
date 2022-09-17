@@ -13,9 +13,13 @@ const download_params = {
     },
     method: 'GET'
   };
+/*
+const form  = document.getElementById('video-form');
 
-  
-
+form.addEventListener('submit', (event) => {
+    // handle the form data
+});
+*/
 // upload video to AssemblyAI
 function uploadVideo(){
     let audioUrl = document.getElementById("video-link").value;
