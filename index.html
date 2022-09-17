@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="TextAI" />
+    <meta property="og:title" content="notetaker" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="#" />
-    <meta property="og:url" content="#" />
-    <title>TextAI</title>
+    <meta property="og:image" content="https://www.notetaker.tech/images/logo-lg.png" />
+    <meta property="og:url" content="https://www.notetaker.tech" />
+    <title>notetaker</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="http://fonts.cdnfonts.com/css/segoe-ui-4" rel="stylesheet">
     <script src="assets/js/bootstrap.bundle.js"></script>    
@@ -20,7 +20,7 @@
         <div class="container">
             <div class="row">
                 <h1 class="heading">
-                    <span class="heading--logo"></span>
+                    <span class="heading--logo"><img src="/images/logo.png" alt="logo" class="img-fluid"></span>
                     <span class="heading--title">notetaker</span>
                 </h1>
             </div>
@@ -55,10 +55,16 @@
     </section>
 
     <!--Loading-->
-    <div id="loading">
-        <img src="images/pencilloading.gif"></img>
-        loading... please do not refresh the page. This may take a few minutes.
-    </div>
+    <section class="loading-page" id="loading-page">
+        <div class="container">
+            <div id="loading" class="text-center">
+                <img src="images/pencilloading.gif" alt="loading image" class="img-fluid mx-auto"></img>
+                <div class="loading-text mx-auto">
+                    <p>loading... please do not refresh the page. This may take a few minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!--Results-->
@@ -69,19 +75,21 @@
         <div class="accordion" id="accordion">
             <div class="accordion-item">
               <h2 class="accordion-header" id="transcript-heading">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                   <span class="accordion-title">Transcript</span>
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body" id="transcript">
                     Please enter a link to see the transcript.
-                    <button onclick="myFunction()">Copy</button> <!--Modify function name-->
+                    <div class="button-space">
+                        <button class="btn btn-light" onclick="myFunction()">Copy</button> <!--Modify function name-->
+                    </div>
                 </div>
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
+              <h2 class="accordion-header" id="Summary-heading">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   <span class="accordion-title">Summary</span>
                 </button>
@@ -89,7 +97,9 @@
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body" id="summary">
                     Please enter a link to see the summary.
-                    <button onclick="myFunction()">Copy</button> <!--Modify function name-->
+                    <div class="button-space">
+                        <button class="btn btn-light" onclick="myFunction()">Copy</button> <!--Modify function name-->
+                    </div>
                 </div>
               </div>
             </div>
@@ -120,9 +130,8 @@
                 <div class="col-12 col-sm-3 col-lg-3 mx-auto">
                     <h5 class="footer--head">Special Thanks &#8212</h5>
                     <ul class="list-inline footer--body">
-                        <li><a href="https://www.assemblyai.com/" target="_blank">AssemblyAI</a></li>
-                        <li><a href="https://cohere.ai/" target="_blank">co:here</a></li>
                         <li><a href="https://hackthenorth.com/" target="_blank">Hack The North</a></li>
+                        <li><a href="https://www.assemblyai.com/" target="_blank">AssemblyAI</a></li>
                     </ul>
                 </div>
             </div>

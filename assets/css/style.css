@@ -10795,6 +10795,14 @@ textarea.form-control-lg {
   font-size: 1rem;
 }
 
+.loading p {
+  font-family: "Segoe UI", sans-serif;
+  color: #37352F;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
 .accordion-title {
   font-family: "Segoe UI", sans-serif;
   font-weight: 400;
@@ -10828,6 +10836,19 @@ textarea.form-control-lg {
 .btn-light:hover {
   background-color: #9B5DE5 !important;
   color: #fff !important;
+}
+
+.results .button-space {
+  padding: 1.5rem 0 0.5rem 0;
+}
+
+.topbar img {
+  max-width: 10%;
+}
+
+.loading-page img {
+  max-width: 10%;
+  opacity: 60%;
 }
 
 /*# sourceMappingURL=style.css.map */
