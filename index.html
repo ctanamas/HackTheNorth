@@ -16,7 +16,7 @@
 </head>
 <body>
     <!--Top Bar-->
-    <section id="topbar" class="topbar">
+    <section id="topbar" class="topbar mb-3">
         <div class="container">
             <div class="row">
                 <h1 class="heading">
@@ -27,18 +27,18 @@
         </div>
     </section>
     <!--Disclaimer and Description-->
-    <section id="description" class="description">
+    <section id="description" class="description mb-3">
         <div class="container">
             <div class="row">
                 <div class="description--text">
-                    <p class="description--paragraph" id="transcript">Blah blah describe text</p>
-                    <p class="description--disclaimer">Blah blah disclaimer</p>
+                    <p class="description--paragraph" id="transcript">Our tool utilizes AssemblyAI to provide a transcript and summary of your audio file within 3 minutes.</p>
+                    <p class="description--disclaimer">Note: This tool is not meant to replace your own notetaking. Please continue making your own notes.</p>
                 </div>
             </div>
         </div>
     </section>
     <!--Input area-->
-    <section id="input-link" class="input-link">
+    <section id="input-link" class="input-link mb-3">
         <div class="container">
             <!--Input-->
             <form class="row">
@@ -54,5 +54,34 @@
         </div>
     </section>
 
+    <!--Results-->
+    <section class="results p-3" id="results">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Transcript
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Transcript goes here
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Summary
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  Summary goes here
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
 </body>
 </html>
