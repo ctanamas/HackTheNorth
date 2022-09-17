@@ -10769,8 +10769,43 @@ textarea.form-control-lg {
   margin-bottom: 1rem;
 }
 .heading--title {
-  font-family: "Segoe UI", sans-serif;
+  font-family: Helvetica, sans-serif;
   font-size: 2rem;
+  color: #37352F;
+  font-weight: 600;
+}
+
+.description--text .description--paragraph {
+  color: #37352F;
+  font-family: "Segoe UI", sans-serif;
+}
+.description--text .description--disclaimer {
+  color: #c2c2c9;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.form-label {
+  font-family: Helvetica, sans-serif;
+  color: #37352F;
+}
+
+.submit-btn {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 14px 24px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms, background 200ms;
+  background: transparent;
+  color: #000000;
+  box-shadow: 0 0 0 3px #000000 inset;
+}
+.submit-btn :hover {
+  transform: translateY(-2px);
 }
 
 /*# sourceMappingURL=style.css.map */
