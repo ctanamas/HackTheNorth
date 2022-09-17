@@ -5,7 +5,7 @@
     
     &--title {
         font-family: Helvetica, sans-serif;
-        font-size: 2rem;
+        font-size: 2.5rem;
         color: $secondary;
         font-weight: 600;
 
@@ -15,7 +15,7 @@
 .description--text {
 
     .description--paragraph {
-        color: $black;
+        color: $secondary;
         font-family: 'Segoe UI', sans-serif;
         font-weight: 400;
         font-size: 1rem;
@@ -31,9 +31,9 @@
 
 .form-label {
     font-family: Helvetica, sans-serif;
-    color: $black;
+    color: $secondary;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .loading {
@@ -46,10 +46,20 @@
     }
 }
 
+.section-header {
+    font-family: Helvetica, sans-serif;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 0rem 1rem 0 1rem;
+    color: $secondary;
+}
+
 .accordion-title {
     font-family: 'Segoe UI', sans-serif;
     font-weight: 400;
     font-size: 1rem;
+    color: $secondary;
 }
 
 .footer{

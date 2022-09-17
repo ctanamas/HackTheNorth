@@ -10770,7 +10770,7 @@ textarea.form-control-lg {
 }
 .heading--title {
   font-family: Helvetica, sans-serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #37352F;
   font-weight: 600;
 }
@@ -10792,7 +10792,7 @@ textarea.form-control-lg {
   font-family: Helvetica, sans-serif;
   color: #37352F;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .loading p {
@@ -10803,10 +10803,20 @@ textarea.form-control-lg {
   text-align: center;
 }
 
+.section-header {
+  font-family: Helvetica, sans-serif;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 0rem 1rem 0 1rem;
+  color: #37352F;
+}
+
 .accordion-title {
   font-family: "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 1rem;
+  color: #37352F;
 }
 
 .footer--head {
@@ -10849,6 +10859,11 @@ textarea.form-control-lg {
 .loading-page img {
   max-width: 10%;
   opacity: 60%;
+}
+@media (max-width: 575.98px) {
+  .loading-page img {
+    max-width: 20%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
