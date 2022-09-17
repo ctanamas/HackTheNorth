@@ -1,0 +1,28 @@
+{
+  "name": "hackthenorth",
+  "version": "1.0.0",
+  "description": "AI Note taker",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch scss:assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctanamas/HackTheNorth.git"
+  },
+  "author": "Crystal and Andrew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ctanamas/HackTheNorth/issues"
+  },
+  "homepage": "https://github.com/ctanamas/HackTheNorth#readme",
+  "devDependencies": {
+    "sass": "^1.54.9"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.11",
+    "bootstrap": "^5.2.1",
+    "postcss": "^8.4.16",
+    "postcss-cli": "^10.0.0"
+  }
+}
