@@ -5,7 +5,6 @@
 // Variables
 const ASSEMBLYAI_API_KEY = "bea1078f699b4028b4cab02dc6adf101";
 const TRANSCRIPT_URL = 'https://api.assemblyai.com/v2/transcript';
-const CHAPTERS_URL = 'https://api.assemblyai.com/v2/transcript';
 
 let refreshTranscript = false;
 let transcriptID = '';
@@ -22,7 +21,12 @@ function uploadVideo(){
     let audioUrl = document.getElementById("video-link").value;
     console.log(audioUrl);
     if(!validLink(audioUrl)) {
-        alert("Please enter a valid mp3 or mp4 file URL.");
+        //alert("Please enter a valid mp3 or mp4 file URL.");
+        // TODO say error with more detail, maybe add that it can't be too long
+        return;
+    }
+    if(!validLink(audioUrl)) {
+        //alert("Please enter a valid mp3 or mp4 file URL.");
         // TODO say error with more detail, maybe add that it can't be too long
         return;
     }
@@ -47,6 +51,7 @@ function uploadVideo(){
     })
     .catch((error) => {
         alert("An unexpected error occured. Please refresh the page and try again.");
+        hideLoading();
         console.error('Error:', error);
     });
 }
@@ -73,6 +78,8 @@ function getTranscript() {
     })
     .catch((error) => {
     console.error(`Error: ${error}`);
+    alert("An unexpected error occured. Please refresh and try again.");
+    hideLoading();
     });
 }
 
@@ -84,16 +91,18 @@ function updateTranscript(data) {
           console.log('AssemblyAI is still transcribing your audio, please try again in a few minutes!');
           break;
         case 'completed':
-            console.log(data.chapters.length);//.text);
-            console.log(data.chapters);
             document.getElementById("transcript").innerText = data.text;
             updateChapters(data.chapters);
             hideLoading();
+            // expand both and say success! and feel free to try again
+            document.getElementById("transcript").classList.add("show");
+            document.getElementById("summary").classList.add("show");
             refreshTranscript = false;
           break;
         default:
           console.log(`Something went wrong :-( : ${data.status}`);
           alert("An unexpected error occured. Please refresh and try again."); // TODO explain
+          hideLoading();
           refreshTranscript = false;
           break;
       }
@@ -127,6 +136,17 @@ function updateChapters(chapters){
     }
 }
 
+// copy transcript
+function copyTranscript() {
+    navigator.clipboard.writeText(document.getElementById("transcript").innerText);
+    alert("Transcript copied to clipboard!");
+}
+
+// copy summary
+function copySummary() {
+    navigator.clipboard.writeText(document.getElementById("summary").innerText);
+    alert("Summary copied to clipboard!");
+}
 
 // Triggers the loading page and starts the incremental refresh
 function transciptUploadSuccess(id) {
@@ -134,8 +154,6 @@ function transciptUploadSuccess(id) {
     console.log("File upload success. transcriptID set to: " + id);
     // "triggers" the periodic refresh for transcript
     refreshTranscript = true;
-   // document.getElementById("transcript").innerText = "loading... (some animation), do not refresh page"; // TODO make it the loading thing
-  //  document.getElementById("summary").innerText = "loading... (some animation), do not refresh page"; 
     
     document.getElementById("loading").style.display = "block";
 
@@ -147,7 +165,28 @@ function hideLoading(){
 }
 
 function validLink(link){
-    // TODO
-    // check if the link is a valid mp3 or mp4 link
+    
+   //let ending = link.substring(link.length - 4); // 3 chars
+   // alert(ending);
+    if (link = "") {
+        alert("Please enter a link.");
+        return false;
+    } 
     return true;
+    
+    /*
+    else {
+        let validTypes = [".webm",".MTS",".M2TS",".TS",".mov",".mp2",".mp4",".m4p",".m4v",".mxf",".3ga",".8svx",".aac",".ac3"
+,".aif",".aiff",".alac",".amr",".ape",".au",".dss",".flac",".flv",".m4a",".m4b",".m4p"
+,".m4r",".mp3",".mpga",".ogg",".oga",".mogg",".opus",".qcp",".tta",".voc",".wav",".wma",".wv"]
+        let len = validTypes.length;
+        for (let i = 0; i < len; i++) {
+            if (ending === validTypes[i]) return true;
+        }
+        alert("Please ensure the link is to a audio or video file type.");
+        return false;
+    }*/
 }
+
+
+
