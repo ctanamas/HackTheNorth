@@ -95,8 +95,11 @@ function updateTranscript(data) {
             updateChapters(data.chapters);
             hideLoading();
             // expand both and say success! and feel free to try again
-            document.getElementById("transcript").classList.add("show");
-            document.getElementById("summary").classList.add("show");
+            //alert("Success! Please view results by expanding the transcript and summary.");
+            document.getElementById("collapseOne").classList.add('show');
+            document.getElementById("collapseTwo").classList.add("show");
+            document.getElementById("transcript").ariaExpanded = 'true';
+            document.getElementById("summary").ariaExpanded = 'true';
             refreshTranscript = false;
           break;
         default:
