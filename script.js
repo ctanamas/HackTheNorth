@@ -5,7 +5,6 @@
 // Variables
 const ASSEMBLYAI_API_KEY = "bea1078f699b4028b4cab02dc6adf101";
 const TRANSCRIPT_URL = 'https://api.assemblyai.com/v2/transcript';
-const CHAPTERS_URL = 'https://api.assemblyai.com/v2/transcript';
 
 let refreshTranscript = false;
 let transcriptID = '';
@@ -136,6 +135,17 @@ function updateChapters(chapters){
     }
 }
 
+// copy transcript
+function copyTranscript() {
+    navigator.clipboard.writeText(document.getElementById("transcript").innerText);
+    alert("Transcript copied to clipboard!");
+}
+
+// copy summary
+function copySummary() {
+    navigator.clipboard.writeText(document.getElementById("summary").innerText);
+    alert("Summary copied to clipboard!");
+}
 
 // Triggers the loading page and starts the incremental refresh
 function transciptUploadSuccess(id) {

@@ -20,7 +20,7 @@
         <div class="container">
             <div class="row">
                 <h1 class="heading">
-                    <span class="heading--logo"><img src="/images/logo.png" alt="logo" class="img-fluid"></span>
+                    <span class="heading--logo"><img src="images/logo.png" alt="logo" class="img-fluid"></span>
                     <span class="heading--title">notetaker</span>
                 </h1>
             </div>
@@ -80,10 +80,12 @@
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body" id="transcript">
-                    Please enter a link to see the transcript.
+                <div class="accordion-body" >
+                    <div id="transcript">
+                        Please enter a link to see the transcript.
+                    </div>
                     <div class="button-space">
-                        <button class="btn btn-light" onclick="myFunction()">Copy</button> <!--Modify function name-->
+                        <button class="btn btn-light" onclick="copyTranscript()">Copy</button>
                     </div>
                 </div>
               </div>
@@ -95,10 +97,12 @@
                 </button>
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body" id="summary">
-                    Please enter a link to see the summary.
+                <div class="accordion-body">
+                    <div id="summary"> 
+                        Please enter a link to see the summary.
+                    </div>
                     <div class="button-space">
-                        <button class="btn btn-light" onclick="myFunction()">Copy</button> <!--Modify function name-->
+                        <button class="btn btn-light" onclick="copySummary()">Copy</button> 
                     </div>
                 </div>
               </div>
