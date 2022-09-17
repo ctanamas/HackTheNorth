@@ -4,12 +4,34 @@
     margin-bottom: 1rem;
     
     &--title {
-        font-family: 'Segoe UI', sans-serif;
+        font-family: Helvetica, sans-serif;
         font-size: 2rem;
+        color: $secondary;
+        font-weight: 600;
+
     }
 }
 
-footer{
+.description--text {
+
+    .description--paragraph {
+        color: $black;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .description--disclaimer {
+        color: $gray;
+        font-family: 'Segoe UI', sans-serif;
+
+    }
+}
+
+.form-label {
+    font-family: Helvetica, sans-serif;
+    color: $black;
+}
+
+.footer{
     &--head{
 
     }
