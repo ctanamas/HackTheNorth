@@ -22,7 +22,11 @@
   "dependencies": {
     "autoprefixer": "^10.4.11",
     "bootstrap": "^5.2.1",
+    "dotenv": "^16.0.2",
+    "node-fetch": "^3.2.10",
     "postcss": "^8.4.16",
     "postcss-cli": "^10.0.0"
-  }
+  },
+  "type": "module",
+  "keywords": []
 }
