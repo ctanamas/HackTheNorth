@@ -14,7 +14,7 @@
     <script src="assets/js/bootstrap.bundle.js"></script>    
     <script src="script.js"></script>             
 </head>
-<body>
+<body onload="hideLoading()">
     <!--Top Bar-->
     <section id="topbar" class="topbar mb-3 mt-2">
         <div class="container">
@@ -54,6 +54,13 @@
         </div>
     </section>
 
+    <!--Loading-->
+    <div id="loading">
+        <img src="images/pencilloading.gif"></img>
+        loading... please do not refresh the page. This may take a few minutes.
+    </div>
+
+
     <!--Results-->
     <section class="results" id="results">
     <div class="container">
@@ -68,7 +75,7 @@
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body" id="transcript">
-                    please Enter a link to see... etc.
+                    Please enter a link to see the transcript.
                     <button onclick="myFunction()">Copy</button> <!--Modify function name-->
                 </div>
               </div>
@@ -81,7 +88,7 @@
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body" id="summary">
-                Enter a link to see... etc.
+                    Please enter a link to see the summary.
                     <button onclick="myFunction()">Copy</button> <!--Modify function name-->
                 </div>
               </div>
