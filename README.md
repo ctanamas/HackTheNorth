@@ -1,0 +1,2 @@
+# HackTheNorth
+AI Note taker
