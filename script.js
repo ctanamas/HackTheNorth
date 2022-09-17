@@ -15,15 +15,20 @@ const params = {
 
 function getTranscript(id) {
 
-
     fetch(url, params)
     .then(response => response.json())
     .then(data => {
-    console.log(data.text);
+        updateTranscript(data.text);
+        //console.log(data.text);
    // print(data);
     })
     .catch((error) => {
     console.error(`Error: ${error}`);
     });
     // return 
+}
+
+function updateTranscript(transcript) {
+    console.log(transcript);
+    document.getElementById("transcript").innerText = transcript;
 }
