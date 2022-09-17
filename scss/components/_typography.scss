@@ -17,11 +17,16 @@
     .description--paragraph {
         color: $black;
         font-family: 'Segoe UI', sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
     }
 
     .description--disclaimer {
         color: $gray;
         font-family: 'Segoe UI', sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        font-style: italic;
 
     }
 }
@@ -29,14 +34,31 @@
 .form-label {
     font-family: Helvetica, sans-serif;
     color: $black;
+    font-weight: 600;
 }
 
 .footer{
     &--head{
-
+        font-family: Helvetica, sans-serif;
+        font-size: 1rem;
+        color: $secondary;
+        font-weight: 400;
     }
 
     &--body{
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 1rem;
+        color: $gray;
+        font-weight: 400;
 
+        a {
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            color: $gray;
+
+            &:hover {
+                color: $secondary;
+            }
+        }
     }
 }
