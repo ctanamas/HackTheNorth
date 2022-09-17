@@ -91,11 +91,12 @@ function updateTranscript(data) {
           console.log('AssemblyAI is still transcribing your audio, please try again in a few minutes!');
           break;
         case 'completed':
-            console.log(data.chapters.length);//.text);
-            console.log(data.chapters);
             document.getElementById("transcript").innerText = data.text;
             updateChapters(data.chapters);
             hideLoading();
+            // expand both and say success! and feel free to try again
+            document.getElementById("transcript").classList.add("show");
+            document.getElementById("summary").classList.add("show");
             refreshTranscript = false;
           break;
         default:
