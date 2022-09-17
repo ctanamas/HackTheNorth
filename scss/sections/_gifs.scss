@@ -1,0 +1,9 @@
+@use '../custom' as *;
+
+.loading-page {
+
+    img {
+        max-width: 10%;
+        opacity: 60%;
+    }
+}

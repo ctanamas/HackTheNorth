@@ -10795,6 +10795,14 @@ textarea.form-control-lg {
   font-size: 1rem;
 }
 
+.loading p {
+  font-family: "Segoe UI", sans-serif;
+  color: #37352F;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
 .accordion-title {
   font-family: "Segoe UI", sans-serif;
   font-weight: 400;
@@ -10832,6 +10840,11 @@ textarea.form-control-lg {
 
 .topbar img {
   max-width: 10%;
+}
+
+.loading-page img {
+  max-width: 10%;
+  opacity: 60%;
 }
 
 /*# sourceMappingURL=style.css.map */

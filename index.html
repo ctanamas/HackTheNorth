@@ -55,10 +55,16 @@
     </section>
 
     <!--Loading-->
-    <div id="loading">
-        <img src="images/pencilloading.gif"></img>
-        loading... please do not refresh the page. This may take a few minutes.
-    </div>
+    <section class="loading-page" id="loading-page">
+        <div class="container">
+            <div id="loading" class="text-center">
+                <img src="images/pencilloading.gif" alt="loading image" class="img-fluid mx-auto"></img>
+                <div class="loading-text mx-auto">
+                    <p>loading... please do not refresh the page. This may take a few minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!--Results-->
@@ -76,7 +82,9 @@
               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body" id="transcript">
                     Please enter a link to see the transcript.
-                    <button onclick="myFunction()">Copy</button> <!--Modify function name-->
+                    <div>
+                        <button onclick="myFunction()">Copy</button> <!--Modify function name-->
+                    </div>
                 </div>
               </div>
             </div>
