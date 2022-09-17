@@ -14,6 +14,7 @@ const download_params = {
     method: 'GET'
   };
 
+  
 
 // upload video to AssemblyAI
 function uploadVideo(){
