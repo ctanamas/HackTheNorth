@@ -1,49 +1,46 @@
-// Transciption
+// Using AssemblyAI API to transcribe a video into text
+// Andrew Gocehco and Crystal Tanamas
+// 2022 September 17
 
+// Variables
 const ASSEMBLYAI_API_KEY = "bea1078f699b4028b4cab02dc6adf101";
-//let id = 'o91jt8pmpb-b317-4568-928f-cb478c7a9bac';
-let transcript_download_url = 'https://api.assemblyai.com/v2/transcript/';//${id}`;
+const TRANSCRIPT_URL = 'https://api.assemblyai.com/v2/transcript';
+const CHAPTERS_URL = 'https://api.assemblyai.com/v2/transcript';
 
-
-//ick?
 let refreshTranscript = false;
-const refreshPage =  setInterval(function() {getTranscript()}, 1000);
-//setInterval(console.log("hi"), 1000);
-//setInterval(console.log("hi")}, 1000);
+let transcriptID = '';
+let summary = false;
+const refreshPage =  setInterval(function() {getTranscript()}, 2000);
 
+// HTML
+{
 
-const download_params = {
-    headers: {
-      "authorization": ASSEMBLYAI_API_KEY, //process.env.ASSEMBLYAI_API_KEY,
-      "content-type": "application/json",
-    },
-    method: 'GET'
-  };
+}
 
 // upload video to AssemblyAI
 function uploadVideo(){
-    let transcript_upload_url = 'https://api.assemblyai.com/v2/transcript';
     let audioUrl = document.getElementById("video-link").value;
     console.log(audioUrl);
     if(!validLink(audioUrl)) {
         alert("Please enter a valid mp3 or mp4 file URL.");
-        // TODO say error with more detail
+        // TODO say error with more detail, maybe add that it can't be too long
         return;
     }
     data = {
-        "audio_url" : audioUrl
+        "audio_url" : audioUrl,
+        "auto_chapters": true
     };
 
     upload_params = {
         headers:{
-            "authorization": ASSEMBLYAI_API_KEY, //process.env.ASSEMBLYAI_API_KEY,
+            "authorization": ASSEMBLYAI_API_KEY,
             "content-type": "application/json",
         },
         body: JSON.stringify(data),
         method: "POST"
     };
 
-    fetch(transcript_upload_url, upload_params)
+    fetch(TRANSCRIPT_URL, upload_params)
     .then(response => response.json())
     .then(data => {
         transciptUploadSuccess(data['id']);
@@ -55,15 +52,21 @@ function uploadVideo(){
 }
 
 
-
-// download once completed
-
+// Attempts to download the transcript from AssemblyAI
 function getTranscript() {
     if (!refreshTranscript) {
         return;
     }
-    console.log("loading!");
-    fetch(transcript_download_url, download_params)
+
+    console.log("loading!"); // remove
+    let download_params = {
+        headers: {
+          "authorization": ASSEMBLYAI_API_KEY,
+          "content-type": "application/json",
+        },
+        method: 'GET'
+    };
+    fetch(TRANSCRIPT_URL + "/" + transcriptID, download_params)
     .then(response => response.json())
     .then(data => {
         updateTranscript(data);
@@ -81,27 +84,43 @@ function updateTranscript(data) {
           console.log('AssemblyAI is still transcribing your audio, please try again in a few minutes!');
           break;
         case 'completed':
-            console.log(data.text);
+            console.log(data.chapters.length);//.text);
+            console.log(data.chapters);
             document.getElementById("transcript").innerText = data.text;
+            updateChapters(data.chapters);
             refreshTranscript = false;
           break;
         default:
           console.log(`Something went wrong :-( : ${data.status}`);
+          alert("An unexpected error occured. Please refresh and try again."); // TODO explain
+          refreshTranscript = false;
           break;
       }
-    
 }
+
+function updateChapters(chapters){
+    let chapLen = chapters.length;   
+    for (int i = 0; i < chapLen; i++) {
+        var HTMLContent = `
+        <div class="" id='chapter${i}'>
+            <div>HTML Content!</div>
+        </div>
+        `;
+        
+        document.getElementById('demo').innerHTML = (HTMLContent);
+        
+    }
+}
+
 
 // Triggers the loading page and starts the incremental refresh
 function transciptUploadSuccess(id) {
-    console.log(id);
-
-    document.getElementById("transcript").innerText = "loading... (some animation), do not refresh page"; // make it the loading thing
-    transcript_download_url = 'https://api.assemblyai.com/v2/transcript/' + id;
-    console.log(transcript_download_url);
+    transcriptID = id;
+    console.log("File upload success. transcriptID set to: " + id);
+    // "triggers" the periodic refresh for transcript
     refreshTranscript = true;
-    // will trigger the periodic refresh??
-
+    document.getElementById("transcript").innerText = "loading... (some animation), do not refresh page"; // TODO make it the loading thing
+    // TODO check if empty
 }
 
 
