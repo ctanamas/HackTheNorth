@@ -88,6 +88,7 @@ function updateTranscript(data) {
             console.log(data.chapters);
             document.getElementById("transcript").innerText = data.text;
             updateChapters(data.chapters);
+            hideLoading();
             refreshTranscript = false;
           break;
         default:
@@ -99,7 +100,7 @@ function updateTranscript(data) {
 }
 
 function updateChapters(chapters){
-    let HTMLContent = "";
+    let HTMLContent = '';
     let chapLen = chapters.length;   
     
     // TODO if only one chap
@@ -107,27 +108,19 @@ function updateChapters(chapters){
     for (let i = 1; i <= chapLen; i++) {
         HTMLContent = HTMLContent + `
         <div class="" id='chapter${i}'>
+            <div class="accordion-body-title">
             <h4>Chapter ${i}: ${chapters[i - 1].gist}</h4>
-            <p>${chapters[i - 1].summary}</p>
-            <p>${chapters[i - 1].headline}</p>
+            </div>
+            <div class="accordion-body-summary">
+                <p>${chapters[i - 1].summary}</p>
+            </div>
+            <div class="accordion-body-takeaway">
+                <p>${chapters[i - 1].headline}</p>
+            </div>   
         </div>
-        `; // TODO add timestamps
+        `; 
         // TODO add copy to clipboard
-/*
 
-        <div class="accordion-body-title">"
-        <h4>Summary title</h4>
-    </div>
-    <div class="accordion-body-summary">
-        <p>Summary</p>
-    </div>
-    <div class="accordion-body-takeaway">
-        <p>Takeaway</p>
-    </div>
-    <div class="accordion-body-time-stamp">
-        <p>Time-stamps</p>
-    </div>
-*/
         
         document.getElementById('summary').innerHTML = (HTMLContent);
         
@@ -141,11 +134,17 @@ function transciptUploadSuccess(id) {
     console.log("File upload success. transcriptID set to: " + id);
     // "triggers" the periodic refresh for transcript
     refreshTranscript = true;
-    document.getElementById("transcript").innerText = "loading... (some animation), do not refresh page"; // TODO make it the loading thing
-    document.getElementById("summary").innerText = "loading... (some animation), do not refresh page"; 
+   // document.getElementById("transcript").innerText = "loading... (some animation), do not refresh page"; // TODO make it the loading thing
+  //  document.getElementById("summary").innerText = "loading... (some animation), do not refresh page"; 
+    
+    document.getElementById("loading").style.display = "block";
+
     // TODO check if empty
 }
 
+function hideLoading(){
+    document.getElementById("loading").style.display = "none";
+}
 
 function validLink(link){
     // TODO
