@@ -1,7 +1,10 @@
 @use '../custom' as *;
 
-.S {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 1rem;
-    color: $primary;
+.heading {
+    margin-bottom: 1rem;
+    
+    &--title {
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 2rem;
+    }
 }

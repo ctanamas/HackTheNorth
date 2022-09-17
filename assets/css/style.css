@@ -10765,10 +10765,12 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.S {
+.heading {
+  margin-bottom: 1rem;
+}
+.heading--title {
   font-family: "Segoe UI", sans-serif;
-  font-size: 1rem;
-  color: #9381ff;
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
