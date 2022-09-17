@@ -26,8 +26,6 @@
         font-family: 'Segoe UI', sans-serif;
         font-weight: 400;
         font-size: 1rem;
-        font-style: italic;
-
     }
 }
 
@@ -35,6 +33,13 @@
     font-family: Helvetica, sans-serif;
     color: $black;
     font-weight: 600;
+    font-size: 1rem;
+}
+
+.accordion-title {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
 }
 
 .footer{
