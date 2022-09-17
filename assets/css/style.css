@@ -10786,13 +10786,19 @@ textarea.form-control-lg {
   font-family: "Segoe UI", sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  font-style: italic;
 }
 
 .form-label {
   font-family: Helvetica, sans-serif;
   color: #37352F;
   font-weight: 600;
+  font-size: 1rem;
+}
+
+.accordion-title {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 .footer--head {
@@ -10816,6 +10822,9 @@ textarea.form-control-lg {
   color: #37352F;
 }
 
+.btn-light {
+  font-family: "Segoe UI", sans-serif !important;
+}
 .btn-light:hover {
   background-color: #9B5DE5 !important;
   color: #fff !important;

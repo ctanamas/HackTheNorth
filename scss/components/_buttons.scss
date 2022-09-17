@@ -1,6 +1,8 @@
 @use '../custom' as *;
 
 .btn-light {
+    font-family: 'Segoe UI', sans-serif !important;
+
     &:hover {
         background-color: $primary !important;
         color: $white !important;
