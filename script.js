@@ -3,7 +3,7 @@
 // 2022 September 17
 
 // Variables
-const ASSEMBLYAI_API_KEY = "bea1078f699b4028b4cab02dc6adf101";
+const ASSEMBLYAI_API_KEY = ""; // PUT YOUR KEY HERE
 const TRANSCRIPT_URL = 'https://api.assemblyai.com/v2/transcript';
 
 let refreshTranscript = false;
