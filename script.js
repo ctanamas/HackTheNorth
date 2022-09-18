@@ -3,7 +3,7 @@
 // 2022 September 17
 
 // Variables
-const ASSEMBLYAI_API_KEY = process.env.ASSEMBLYAI_API_KEY; // PUT YOUR KEY HERE
+const ASSEMBLYAI_API_KEY = ""; // PUT YOUR KEY HERE
 const TRANSCRIPT_URL = 'https://api.assemblyai.com/v2/transcript';
 
 let refreshTranscript = false;
@@ -11,10 +11,6 @@ let transcriptID = '';
 let summary = false;
 const refreshPage =  setInterval(function() {getTranscript()}, 2000);
 
-// HTML
-{
-
-}
 
 // upload video to AssemblyAI
 function uploadVideo(){
