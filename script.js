@@ -3,7 +3,7 @@
 // 2022 September 17
 
 // Variables
-const ASSEMBLYAI_API_KEY = "bea1078f699b4028b4cab02dc6adf101";
+const ASSEMBLYAI_API_KEY = ""; // PUT YOUR KEY HERE
 const TRANSCRIPT_URL = 'https://api.assemblyai.com/v2/transcript';
 
 let refreshTranscript = false;
@@ -11,10 +11,6 @@ let transcriptID = '';
 let summary = false;
 const refreshPage =  setInterval(function() {getTranscript()}, 2000);
 
-// HTML
-{
-
-}
 
 // upload video to AssemblyAI
 function uploadVideo(){
@@ -95,8 +91,11 @@ function updateTranscript(data) {
             updateChapters(data.chapters);
             hideLoading();
             // expand both and say success! and feel free to try again
-            document.getElementById("transcript").classList.add("show");
-            document.getElementById("summary").classList.add("show");
+            //alert("Success! Please view results by expanding the transcript and summary.");
+            document.getElementById("collapseOne").classList.add('show');
+            document.getElementById("collapseTwo").classList.add("show");
+            document.getElementById("transcript").ariaExpanded = 'true';
+            document.getElementById("summary").ariaExpanded = 'true';
             refreshTranscript = false;
           break;
         default:
